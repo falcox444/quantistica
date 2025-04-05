@@ -68,6 +68,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%; /* Aggiunto per limitare la larghezza del contenuto */
+    box-sizing: border-box; /* Aggiunto per includere il padding nella larghezza */
 }
 
 .hero-content h1 {
@@ -145,19 +147,20 @@ img {
     }
 
     .hero-content {
-        position: relative; /* Cambia in relative */
-        top: auto;
-        left: auto;
-        transform: none;
-        padding: 20px;
-        text-align: center;
+        position: absolute; /* Ripristina il posizionamento assoluto */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; /* Aggiunto per limitare la larghezza del contenuto */
+        box-sizing: border-box; /* Aggiunto per includere il padding nella larghezza */
+        padding: 10px; /* Aggiungi un po' di padding */
     }
 
     .hero-content h1 {
-        font-size: 1.8em;
+        font-size: 1.8em; /* Riduci la dimensione del titolo */
     }
 
     .hero-content p {
-        font-size: 1em;
+        font-size: 1em; /* Riduci la dimensione del paragrafo */
     }
 }
