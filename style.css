@@ -70,7 +70,7 @@ main {
     transform: translate(-50%, -50%);
 }
 
-hero-content h1 {
+.hero-content h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
@@ -102,29 +102,29 @@ hero-content h1 {
     flex-grow: 1;
 }
 
-img{
-    max-width:100%;
-    height:auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Stili per schermi di larghezza inferiore a 768px (telefoni cellulari) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Impila gli elementi dell'header */
-        align-items: flex-start; /* Allinea gli elementi a sinistra */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     nav ul {
-        flex-direction: column; /* Impila gli elementi del menu di navigazione */
+        flex-direction: column;
         padding: 0;
     }
 
     nav li {
-        margin: 5px 0; /* Aumenta il margine tra gli elementi del menu */
+        margin: 5px 0;
     }
 
     .logo {
-        margin-left: 10px; /* Riduci il margine sinistro del logo */
+        margin-left: 10px;
         margin-bottom: 10px;
     }
 
@@ -133,14 +133,31 @@ img{
     }
 
     .concept, .phenomenon, .application, .interpretation {
-        flex-direction: column; /* Impila immagine e testo */
-        align-items: center; /* Centra gli elementi */
-        text-align: center; /* Centra il testo */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .concept img, .phenomenon img, .concept video, .phenomenon video, .application img, .interpretation img {
-        max-width: 100%; /* L'immagine occupa tutta la larghezza */
-        margin-right: 0; /* Rimuovi il margine destro */
-        margin-bottom: 10px; /* Aggiungi un margine inferiore */
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-content {
+        position: relative; /* Cambia in relative */
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
     }
 }
