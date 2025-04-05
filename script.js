@@ -32,7 +32,12 @@ function translatePage(language) {
             'molti-mondi-desc': 'Un’alternativa all’interpretazione di Copenhagen, formulata da Hugh Everett. Dice che ogni volta che avviene una misura quantistica, l’universo si divide in tanti universi paralleli quanti sono i possibili risultati. In uno, il gatto è vivo; in un altro, è morto (come nel famoso paradosso del gatto di Schrödinger). Non c’è collasso della funzione d’onda: tutti gli esiti avvengono, ma in mondi separati.',
             'altre-title': 'Altre Interpretazioni',
             'altre-desc': 'Esistono molte altre interpretazioni, come la teoria delle variabili nascoste e l\'interpretazione transazionale.',
-            'index-link': 'Torna all\'Introduzione'
+            'index-link': 'Torna all\'Introduzione',
+            'introduzione':'Introduzione',
+            'fenomeni' : 'Fenomeni',
+            'applicazioni': 'Applicazioni',
+            'interpretazioni' : 'Interpretazioni',
+            'tf':'Fenomeni Quantistici che Sfuggono all’Intuito'
         },
         'en': {
             'hero-title': 'Welcome to the Quantum World',
@@ -63,10 +68,16 @@ function translatePage(language) {
             'molti-mondi-desc': 'An alternative to the Copenhagen interpretation, formulated by Hugh Everett. It says that every time a quantum measurement is made, the universe splits into as many parallel universes as there are possible outcomes. In one, the cat is alive; in another, it’s dead (like in the famous Schrödinger’s cat paradox). There is no wavefunction collapse: all outcomes occur, but in separate worlds.',
             'altre-title': 'Other Interpretations',
             'altre-desc': 'There are many other interpretations, such as hidden variables theory and the transactional interpretation.',
-            'index-link': 'Back to Introduction'
+            'index-link': 'Back to Introduction',
+            'introduzione':'Introduction',
+            'fenomeni':'Phenomena',
+            'applicazioni':'Applications',
+            'interpretazioni': 'Interpretations',
+            'tf':'Quantum Phenomena That Elude Intuition'
         }
     };
 
+    //Traduzione elementi con attributo 'id'
     const textElements = document.querySelectorAll('[id]');
     textElements.forEach(element => {
         const id = element.id;
@@ -74,7 +85,16 @@ function translatePage(language) {
             element.textContent = translations[language][id];
         }
     });
+    // Traduzione elementi con attributo 'data-translate'
+    const textElementsData = document.querySelectorAll('[data-translate]');
+    textElementsData.forEach(element => {
+        const key = element.dataset.translate;
+        if (translations[language][key]) {
+            element.textContent = translations[language][key];
+        }
+    });
 }
+
 
 // Gestione della selezione della lingua
 languageSelect.addEventListener('change', () => {
